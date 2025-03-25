@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CarCard from './CarCards';
 
 const carData = [
-  { name: "BMW M5 CS", image: "https://mediapool.bmwgroup.com/cache/P9/202101/P90411278/P90411278-the-new-bmw-m5-cs-01-2021-2250px.jpg" },
+  { name: "BMW M5 CS", image: "CarImages/BMW-M5-PNG-Image.png" },
   { name: "Audi RS7", image: "https://www.carscoops.com/wp-content/uploads/2019/08/3969cea6-audi-rs7-rendering.jpg" },
   { name: "Volkswagen GOLF GTI", image: "https://media.ed.edmunds-media.com/volkswagen/golf-gti/2024/oem/2024_volkswagen_golf-gti_4dr-hatchback_380-autobahn_fq_oem_1_1600.jpg" },
   { name: "Lotus Exige", image: "https://www.supercars.net/blog/wp-content/uploads/2020/05/Lotus-Exige-S-V6-2012.jpg" },
