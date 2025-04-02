@@ -8,7 +8,7 @@ function App() {
       <Navbar />
       <CarGallery />
       <footer className="text-center bg-dark text-light py-3 mt-5">
-        <p>&copy; 2025 Moto Guide. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Moto Guide. All rights reserved.</p>
       </footer>
     </div>
   );

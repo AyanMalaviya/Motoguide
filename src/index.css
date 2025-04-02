@@ -23,6 +23,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 20px;
+  box-shadow:#ececec 2px 4px;
 }
 .card img {
   height: 220px;
@@ -34,7 +35,7 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 .card:hover img {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 .card-text {
   font-weight: 500;
@@ -63,3 +64,8 @@ footer {
       height: 180px;
   }
 }
+
+  .card-price{
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+  }
