@@ -3,8 +3,8 @@ body {
   background-color: #f4f4f4;
 }
 .navbar-brand {
-  font-weight: 600;
-  font-size: 1.8rem;
+  font-weight: 1000;
+  font-size: 2rem;
   color: #ff5733 !important;
 }
 .navbar {
@@ -23,15 +23,29 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 20px;
-  box-shadow:#ececec 2px 4px;
+  box-shadow:#f0efef 2px 4px;
 }
 .card img {
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+.card-price{
+background-color: rgb(240, 240, 240);
+border-radius: 10px;
+}
+button{
+align-items: center;
+opacity: 0;
+background-color: yellow;
+}
+button:hover {
+  opacity:1;
+}
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 .card:hover img {
@@ -53,19 +67,11 @@ body {
 footer {
   background-color: #222;
   color: #fff;
-  text-align: center;
+  align-items: center;
   padding: 20px 0;
 }
 @media (max-width: 576px) {
   .navbar-brand {
       font-size: 1.5rem;
   }
-  .card img {
-      height: 180px;
-  }
 }
-
-  .card-price{
-    background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-  }
