@@ -5,6 +5,7 @@ import Featured from './Pages/Featured';
 import HighComfort from './Pages/HighComfort';
 import HighPower from './Pages/HighPower';
 import Home from './Pages/Home';
+import LoginRegister from './Pages/LoginRegister'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/featured" element={<Featured />} />
           <Route path="/highpower" element={<HighPower />} />
           <Route path="/highcomfort" element={<HighComfort />} />
+          <Route path="/loginregister" element={<LoginRegister />} />
         </Routes>
         
         <footer className="text-center bg-dark text-light py-3 mt-5">
