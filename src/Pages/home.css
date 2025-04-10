@@ -1,0 +1,62 @@
+.home-container {
+  background: linear-gradient(to bottom, #1a1a1a, #000);
+  color: white;
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #ff3d00;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.explore-button {
+  transition: transform 0.3s ease;
+}
+
+.explore-button:hover {
+  transform: scale(1.05);
+}
+
+/* Slider Section */
+.slider-section {
+  padding: 40px 20px 80px;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.slider-description {
+  color: #bbb;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}

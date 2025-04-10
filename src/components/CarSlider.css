@@ -1,0 +1,28 @@
+/* src/components/CarSlider.css */
+.slider-container {
+    margin: 60px auto;
+    max-width: 1000px;
+    width: 90%;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .slider-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .slide {
+    padding: 10px;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+  
