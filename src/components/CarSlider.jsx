@@ -5,13 +5,7 @@ import './CarSlider.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const carImages = [
-    'https://cdn.ferrari.com/cms/network/media/img/resize/670e710357a595000f736188-ferrari-f80-lineup-desktop?height=750',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvDUE_5G6HLUZAOWWB35JVmvLEZE_K3bSJ4FcuF5gSEUwVGo_JaicW57Fhi9fQ-ZjRHY0&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7RwIjhGwKiABgwJ6Ye7dsxEfChqUDPNaHKw&s',
-];
-
-const CarSlider = () => {
+const CarSlider = ({ title, images }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -31,9 +25,9 @@ const CarSlider = () => {
 
   return (
     <div className="slider-container">
-      <h2 className="slider-title">Luxurious cars collections</h2>
+      <h2 className="slider-title">{title}</h2>
       <Slider {...settings}>
-        {carImages.map((img, i) => (
+        {images.map((img, i) => (
           <div key={i} className="slide">
             <img src={img} alt={`Car ${i + 1}`} className="slide-image" />
           </div>

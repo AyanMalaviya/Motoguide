@@ -7,7 +7,11 @@ import HighComfort from './Pages/HighComfort'; // Adjusted path
 import HighPower from './Pages/HighPower'; // Adjusted path
 import Home from './Pages/Home'; // Adjusted path
 import { CarProvider } from './context/CarContext';
-import CarSlider from './components/CarSlider';
+import Contact from './Pages/ContactUs';
+
+<Route path="/contactUs" element={<Contact />} />
+
+
 function App() {
   return (
     <CarProvider>
@@ -22,7 +26,6 @@ function App() {
               <Route path="/highcomfort" element={<HighComfort />} />
             </Routes>
             <div style={{ background: '#111', minHeight: '100vh' }}>
-      <CarSlider />
     </div>
   );
           </main>
