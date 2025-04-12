@@ -3,7 +3,7 @@ import CarGallery from '../components/CarGallery';
 import { featuredCars } from '../data/carData';
 
 const Featured = () => {
-  return <CarGallery carData={featuredCars} title="Featured Racers" />;
+  return <CarGallery carData={featuredCars} title="Featured" />;
 };
 
 export default Featured;

@@ -1,0 +1,75 @@
+.home-container {
+  background: linear-gradient(to bottom, #1a1a1a, #000);
+  color: white;
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero-title {
+  font-size: 5rem;
+  color: #ff3d00;
+  font-weight: 1000;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 3rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.explore-button {
+  font-size: large;
+  height: 100px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  background: linear-gradient(45deg, #ff0808, #5b0000);
+}
+
+.explore-button:hover {
+  transform: scale(1.1);
+}
+
+/* Slider Section */
+.slider-section {
+  padding: 40px 20px 80px;
+  text-align: center;
+}
+
+.slider-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.slider-description {
+  color: #bbb;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.light-theme .home-container {
+  background: linear-gradient(145deg, #ffffff, #e0e0e0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.light-theme .hero-subtitle, .light-theme .hero-description, .light-theme .slider-description, .light-theme .slider-title {
+  color: #000000;
+}

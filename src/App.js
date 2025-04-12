@@ -8,6 +8,9 @@ import HighPower from './Pages/HighPower'; // Adjusted path
 import Home from './Pages/Home'; // Adjusted path
 import { CarProvider } from './context/CarContext';
 
+import SearchResults from './components/SearchResult'; // adjust path if needed
+
+
 function App() {
   return (
     <CarProvider>
@@ -20,7 +23,10 @@ function App() {
               <Route path="/featured" element={<Featured />} />
               <Route path="/highpower" element={<HighPower />} />
               <Route path="/highcomfort" element={<HighComfort />} />
+              <Route path="/search" element={<SearchResults />} />
             </Routes>
+            <div style={{ background: '#111', minHeight: '0vh' }}>
+            </div>
           </main>
           <Footer />
         </div>
