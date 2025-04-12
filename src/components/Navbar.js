@@ -1,41 +1,49 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
+import { FiSun, FiMoon, FiSearch } from 'react-icons/fi';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const location = useLocation();
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
   const toggleTheme = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle('light-theme');
   };
 
-  const isActive = (path) => location.pathname === path ? 'active' : '';
+  const isActive = (path) => (location.pathname === path ? 'active' : '');
 
   return (
-    <nav className={`navbar ${darkMode ? '' : 'light'}`}>
+    <nav className={`navbar ${darkMode ? 'dark' : 'light'}`}>
       <div className="navbar-container">
-        <h2 className="navbar-logo">MotoGuide</h2>
-
-        <div className="menu-toggle" onClick={toggleMenu}>
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+        <div className="navbar-left navbar-links">
+          <Link to="/" className={`nav-link ${isActive('/')}`}>
+            Home
+          </Link>
+          <Link to="/featured" className={`nav-link ${isActive('/featured')}`}>
+            Featured
+          </Link>
         </div>
-
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><Link to="/" className={isActive('/')} onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/featured" className={isActive('/featured')} onClick={closeMenu}>Featured</Link></li>
-          <li><Link to="/highpower" className={isActive('/highpower')} onClick={closeMenu}>High Power</Link></li>
-          <li><Link to="/highcomfort" className={isActive('/highcomfort')} onClick={closeMenu}>High Comfort</Link></li>
-          <li><Link to="/contactUs" className={isActive('/contactUs')} onClick={closeMenu}>Contact</Link></li>
-        </ul>
-
-        <div className="theme-toggle" onClick={toggleTheme}>
-          {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+        <div className="navbar-brand">
+          <span className="brand-highlight">Moto</span>Guide
+        </div>
+        <div className="navbar-right navbar-links">
+          <Link to="/highpower" className={`nav-link ${isActive('/highpower')}`}>
+            High Power
+          </Link>
+          <Link to="/highcomfort" className={`nav-link ${isActive('/highcomfort')}`}>
+            High Comfort
+          </Link>
+          <Link to="/contactUs" className={`nav-link ${isActive('/contactUs')}`}>
+            Contact
+          </Link>
+          <button className="search-bar">
+            <FiSearch size={22} />
+          </button>
+          <div className="theme-toggle" onClick={toggleTheme}>
+            {darkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
+          </div>
         </div>
       </div>
     </nav>
