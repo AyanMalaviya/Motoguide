@@ -24,19 +24,16 @@ const Navbar = () => {
           <Link to="/featured" className={`nav-link ${isActive('/featured')}`}>
             Featured
           </Link>
+          <Link to="/highpower" className={`nav-link ${isActive('/highpower')}`}>
+            High Power
+          </Link>
         </div>
         <div className="navbar-brand">
           <span className="brand-highlight">Moto</span>Guide
         </div>
         <div className="navbar-right navbar-links">
-          <Link to="/highpower" className={`nav-link ${isActive('/highpower')}`}>
-            High Power
-          </Link>
           <Link to="/highcomfort" className={`nav-link ${isActive('/highcomfort')}`}>
             High Comfort
-          </Link>
-          <Link to="/contactUs" className={`nav-link ${isActive('/contactUs')}`}>
-            Contact
           </Link>
           <button className="search-bar">
             <FiSearch size={22} />
