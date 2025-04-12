@@ -7,9 +7,8 @@ import HighComfort from './Pages/HighComfort'; // Adjusted path
 import HighPower from './Pages/HighPower'; // Adjusted path
 import Home from './Pages/Home'; // Adjusted path
 import { CarProvider } from './context/CarContext';
-import Contact from './Pages/ContactUs';
 
-<Route path="/contactUs" element={<Contact />} />
+import SearchResults from './components/SearchResult'; // adjust path if needed
 
 
 function App() {
@@ -24,9 +23,10 @@ function App() {
               <Route path="/featured" element={<Featured />} />
               <Route path="/highpower" element={<HighPower />} />
               <Route path="/highcomfort" element={<HighComfort />} />
+              <Route path="/search" element={<SearchResults />} />
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
-    </div>
+            </div>
           </main>
           <Footer />
         </div>
