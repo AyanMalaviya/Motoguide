@@ -13,8 +13,8 @@ const Home = () => {
 
   const supercarImages = [
     'https://cdn.ferrari.com/cms/network/media/img/resize/670e710357a595000f736188-ferrari-f80-lineup-desktop?height=750',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvDUE_5G6HLUZAOWWB35JVmvLEZE_K3bSJ4FcuF5gSEUwVGo_JaicW57Fhi9fQ-ZjRHY0&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7RwIjhGwKiABgwJ6Ye7dsxEfChqUDPNaHKw&s',
+    'https://www.automobilemag.com/uploads/sites/11/2020/11/Lamborghini-Aventador-SVJ.jpg',
+    'https://www.mclarencf.com/imagetag/357/43/l/Used-2020-McLaren-720S-Spider-Performance.jpg',
   ];
 
   const luxuryCarImages = [
@@ -30,7 +30,7 @@ const Home = () => {
         <h1 className="hero-title">WELCOME TO MOTOGUIDE</h1>
         <p className="hero-subtitle">Where Luxury Meets Speed</p>
         <p className="hero-description">
-          Experience the thrill of the world’s most elite automotive machines, designed for performance and elegance.
+          Experience the thrill of the world's most elite automotive machines, designed for performance and elegance.
         </p>
         <Button 
           variant="contained" 

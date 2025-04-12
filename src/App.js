@@ -25,9 +25,8 @@ function App() {
               <Route path="/highpower" element={<HighPower />} />
               <Route path="/highcomfort" element={<HighComfort />} />
             </Routes>
-            <div style={{ background: '#111', minHeight: '100vh' }}>
+            <div style={{ background: '#111', minHeight: '0vh' }}>
     </div>
-  );
           </main>
           <Footer />
         </div>
