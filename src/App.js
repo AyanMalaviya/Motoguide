@@ -6,6 +6,7 @@ import Featured from './Pages/Featured';
 import HighComfort from './Pages/HighComfort';
 import HighPower from './Pages/HighPower';
 import Home from './Pages/Home';
+import ContactUs from './Pages/ContactUs';
 import { CarProvider } from './context/CarContext';
 import SearchResults from './components/SearchResult';
 import CarDescription from './components/CarDescription';
@@ -24,6 +25,7 @@ function App() {
               <Route path="/highcomfort" element={<HighComfort />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/car/:carName" element={<CarDescription />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
             </div>
