@@ -7,6 +7,7 @@ import HighComfort from './Pages/HighComfort';
 import HighPower from './Pages/HighPower';
 import Home from './Pages/Home';
 import ContactUs from './Pages/ContactUs';
+import AboutUs from './Pages/AboutUs'; // Import the AboutUs page
 import { CarProvider } from './context/CarContext';
 import SearchResults from './components/SearchResult';
 import CarDescription from './components/CarDescription';
@@ -26,6 +27,7 @@ function App() {
               <Route path="/search" element={<SearchResults />} />
               <Route path="/car/:carName" element={<CarDescription />} />
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/about" element={<AboutUs />} /> {/* Add AboutUs route */}
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
             </div>

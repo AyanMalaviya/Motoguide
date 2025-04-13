@@ -1,0 +1,108 @@
+/* General Styles */
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .about-us-container.light {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    color: #1a1a1a;
+  }
+  
+  /* Hero Section */
+  .about-us-hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+    color: #ff3d3d;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+  }
+  
+  .hero-phone {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-button {
+    padding: 1rem 2rem;
+    background-color: #ff3d3d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #ff5555;
+  }
+  
+  /* Light Theme Adjustments */
+  .about-us-container.light .hero-title,
+  .about-us-container.light .hero-description,
+  .about-us-container.light .hero-phone {
+    color: #1a1a1a;
+  }
+  
+  .about-us-container.light .hero-subtitle {
+    color: #ff3d3d;
+  }
+  
+  .about-us-container.light .hero-button {
+    background-color: #ff3d3d;
+  }
+  
+  .about-us-container.light .hero-button:hover {
+    background-color: #ff5555;
+  }
