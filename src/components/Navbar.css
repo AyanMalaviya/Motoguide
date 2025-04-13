@@ -1,6 +1,6 @@
 /* Navbar */
 .navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -31,6 +31,8 @@
 
 /* Navbar Brand */
 .navbar-brand {
+  position: fixed;
+  left: 50px;
   font-size: 2.6rem;
   font-weight: 900;
   font-family: 'Poppins', sans-serif;
@@ -70,7 +72,15 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 15px;
+}
+
+.logo-image {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100%; /* Adjust the height as needed */
+  width: auto;
 }
 
 .nav-link {

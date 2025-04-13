@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-section">
           <h2 className="footer-title">MotoGuide</h2>
           <p className="footer-description">
-            Discover the power, comfort, and speed of the best motorbikes on the market.
+            Discover the power, comfort, and speed of the best cars on the market.
             Your ultimate riding companion.
           </p>
         </div>
