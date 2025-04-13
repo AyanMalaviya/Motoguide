@@ -37,6 +37,7 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${darkMode ? 'dark' : 'light'}`}>
         <div className="navbar-container">
+          {/* Left side - only Home and Featured */}
           <div className="navbar-left navbar-links">
             <Link to="/" className={`nav-link ${isActive('/')}`}>
               Home
@@ -44,41 +45,40 @@ const Navbar = () => {
             <Link to="/featured" className={`nav-link ${isActive('/featured')}`}>
               Featured
             </Link>
-            <Link to="/highpower" className={`nav-link ${isActive('/highpower')}`}>
-              High Power
-            </Link>
           </div>
 
+          {/* Centered brand */}
           <div className="navbar-brand">
             <span className="brand-highlight">Moto</span>Guide
           </div>
 
+          {/* Right side - Contact Us, Search, Theme, Sidebar */}
           <div className="navbar-right navbar-links">
-            <Link to="/highcomfort" className={`nav-link ${isActive('/highcomfort')}`}>
-              High Comfort
-            </Link>
             <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
               Contact Us
             </Link>
 
-            <form onSubmit={handleSearchSubmit} className={`search-form ${searchActive ? 'active' : ''}`}>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={handleSearchChange}
-                autoFocus={searchActive}
-              />
-              <button
-                type="button"
-                className="search-icon"
-                onClick={handleSearchToggle}
-                title={searchActive ? "Close Search" : "Open Search"}
-              >
-                <FiSearch size={22} />
-              </button>
-            </form>
+            <button
+              type="button"
+              className="search-icon"
+              onClick={handleSearchToggle}
+              title="Search"
+            >
+              <FiSearch size={22} />
+            </button>
+
+            {searchActive && (
+              <form onSubmit={handleSearchSubmit} className="search-form active">
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  autoFocus
+                />
+              </form>
+            )}
 
             <div className="theme-toggle" onClick={toggleTheme} title="Toggle Theme">
               {darkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
