@@ -2,14 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Featured from './Pages/Featured'; // Adjusted path
-import HighComfort from './Pages/HighComfort'; // Adjusted path
-import HighPower from './Pages/HighPower'; // Adjusted path
-import Home from './Pages/Home'; // Adjusted path
+import Featured from './Pages/Featured';
+import HighComfort from './Pages/HighComfort';
+import HighPower from './Pages/HighPower';
+import Home from './Pages/Home';
 import { CarProvider } from './context/CarContext';
-
-import SearchResults from './components/SearchResult'; // adjust path if needed
-
+import SearchResults from './components/SearchResult';
+import CarDescription from './components/CarDescription';
 
 function App() {
   return (
@@ -24,6 +23,7 @@ function App() {
               <Route path="/highpower" element={<HighPower />} />
               <Route path="/highcomfort" element={<HighComfort />} />
               <Route path="/search" element={<SearchResults />} />
+              <Route path="/car/:carName" element={<CarDescription />} />
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
             </div>
