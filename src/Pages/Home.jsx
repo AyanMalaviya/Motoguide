@@ -6,9 +6,14 @@ import './home.css';
 
 const Home = () => {
   const sliderRef = useRef(null);
+  const [showAllBrands, setShowAllBrands] = useState(false);
 
   const handleExploreClick = () => {
     sliderRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleViewAll = () => {
+    setShowAllBrands(!showAllBrands);
   };
 
   const supercarImages = [
@@ -43,33 +48,29 @@ const Home = () => {
     { logo: 'https://www.carlogos.org/car-logos/toyota-logo.png', name: 'Toyota' },
     { logo: 'https://www.carlogos.org/car-logos/lexus-logo.png', name: 'Lexus' },
     { logo: 'https://www.carlogos.org/car-logos/mg-logo.png', name: 'MG' }
-  ];
-
-  const [showAllBrands, setShowAllBrands] = useState(false);
-
-  const handleViewAll = () => {
-    setShowAllBrands(!showAllBrands);
-  };
+];
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <section className="hero-section">
-        <h1 className="hero-title">WELCOME TO MOTOGUIDE</h1>
-        <p className="hero-subtitle">Where Luxury Meets Speed</p>
-        <p className="hero-description">
-          Experience the thrill of the world's most elite automotive machines, designed for performance and elegance.
-        </p>
-        <Button 
-          variant="contained" 
-          color="error" 
-          onClick={handleExploreClick}
-          className="explore-button"
-        >
-          EXPLORE COLLECTION
-        </Button>
+        <div className="hero-content">
+          <div className="hero-text-overlay">
+            <h1 className="hero-title">WELCOME TO MOTOGUIDE</h1>
+            <p className="hero-subtitle">Where Luxury Meets Speed</p>
+            <p className="hero-description">
+              Experience the thrill of the world's most elite automotive machines, designed for performance and elegance.
+            </p>
+            <Button 
+              variant="contained" 
+              color="error" 
+              onClick={handleExploreClick}
+              className="explore-button"
+            >
+              EXPLORE COLLECTION
+            </Button>
+          </div>
+        </div>
       </section>
-
       {/* CarSlider Section */}
       <section ref={sliderRef} className="slider-section">
         <CarSlider title="Supercar Collection" images={supercarImages} />

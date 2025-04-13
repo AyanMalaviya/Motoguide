@@ -1,5 +1,8 @@
 .home-container {
-  background: linear-gradient(to bottom, #1a1a1a, #000);
+  background: linear-gradient(to bottom, 
+    rgba(26, 26, 26, 0.8), 
+    rgba(190, 224, 224, 0.8)
+  );
   color: white;
   min-height: 100vh;
   padding: 0;
@@ -9,65 +12,94 @@
 
 /* Hero Section */
 .hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwZmVycmFyaXxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 80px 20px 60px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-text {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-title {
   font-size: 5rem;
-  color: #ff3d00;
-  font-weight: 1000;
-  margin-bottom: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
 }
 
-.hero-subtitle {
-  font-size: 3rem;
-  color: #ccc;
-  margin-bottom: 10px;
+.hero-subheading {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 500;
 }
 
-.hero-description {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  font-size: 1.5rem;
-  color: #aaa;
-  line-height: 1.6;
+.shop-now-btn {
+  background: linear-gradient(45deg, #ff3d3d, #ff0000) !important;
+  padding: 1.2rem 4rem !important;
+  font-size: 1.4rem !important;
+  text-transform: uppercase !important;
+  border-radius: 50px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3) !important;
+  border: 2px solid transparent !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
 }
 
-.explore-button {
-  font-size: large;
-  height: 100px;
-  width: 300px;
-  transition: transform 0.3s ease;
-  background: linear-gradient(45deg, #ff0808, #5b0000);
+.shop-now-btn:hover {
+  background: transparent !important;
+  border-color: #ff3d3d !important;
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4) !important;
 }
 
-.explore-button:hover {
-  transform: scale(1.1);
+.shop-now-btn:active {
+  transform: translateY(2px) !important;
 }
 
-/* Slider Section */
-.slider-section {
-  padding: 40px 20px 80px;
-  text-align: center;
+.highlight {
+  color: #ff3d3d;
 }
 
-.slider-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff;
+.shop-now-btn {
+  background: #ff3d3d !important;
+  padding: 1rem 3rem !important;
+  font-size: 1.2rem !important;
+  text-transform: none !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
 }
 
-.slider-description {
-  color: #bbb;
-  margin-bottom: 10px;
-  font-size: 1rem;
+.shop-now-btn:hover {
+  background: #ff5555 !important;
+  transform: translateY(-2px);
 }
 
-.light-theme .home-container {
-  background: linear-gradient(145deg, #ffffff, #e0e0e0);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Light theme adjustments */
+.light-theme .hero-subheading,
+.light-theme .hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .light-theme .hero-subtitle, .light-theme .hero-description, .light-theme .slider-description, .light-theme .slider-title {

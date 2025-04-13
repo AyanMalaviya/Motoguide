@@ -116,6 +116,9 @@ const Navbar = () => {
         <Link to="/contact" className="sidebar-link" onClick={toggleSidebar}>
           Contact Us
         </Link>
+        <Link to="/about" className="sidebar-link" onClick={toggleSidebar}>
+          AboutUs
+        </Link>
       </div>
     </>
   );
