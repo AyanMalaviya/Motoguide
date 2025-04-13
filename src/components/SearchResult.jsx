@@ -1,12 +1,21 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import CarCard from './CarCard';
+import fullCarData from '../data/FullCardata'; // Adjust path as needed
 
 const SearchResults = () => {
   const location = useLocation();
-  const searchResults = location.state?.results || [];
 
-  if (searchResults.length === 0) {
+  // Get search query from URL
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get('query')?.toLowerCase() || '';
+
+  // Filter cars based on the query matching the car name
+  const filteredResults = fullCarData.filter(car =>
+    car.name.toLowerCase().includes(query)
+  );
+
+  if (filteredResults.length === 0) {
     return (
       <div className="no-results">
         <h2>No cars found matching your search</h2>
@@ -16,9 +25,9 @@ const SearchResults = () => {
 
   return (
     <div className="search-results">
-      <h2>Search Results</h2>
+      <h2>Search Results for "{query}"</h2>
       <div className="car-grid">
-        {searchResults.map((car, index) => (
+        {filteredResults.map((car, index) => (
           <CarCard key={index} car={car} />
         ))}
       </div>

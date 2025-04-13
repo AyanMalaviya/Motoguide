@@ -18,9 +18,9 @@ const Home = () => {
   ];
 
   const luxuryCarImages = [
-    'https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg',
-    'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg',
-    'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg',
+    'https://media.autoexpress.co.uk/image/private/s--dsad6H7D--/v1562247060/autoexpress/2018/11/2twin.jpg',
+    'https://www.hdcarwallpapers.com/walls/2018_vision_mercedes_maybach_ultimate_luxury_interior_4k-HD.jpg',
+    'https://i.pinimg.com/originals/5a/da/38/5ada3891fc99a64c73559438b107a63d.jpg',
   ];
 
   return (
