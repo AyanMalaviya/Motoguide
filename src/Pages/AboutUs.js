@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Add this import
 import './AboutUs.css';
 
 const AboutUs = () => {
-  const [theme, setTheme] = useState('dark'); // Default theme is dark
+  const navigate = useNavigate(); // Add this hook
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     // Update theme based on body class
@@ -20,9 +22,12 @@ const AboutUs = () => {
     return () => observer.disconnect(); // Cleanup observer on unmount
   }, []);
 
+  const handleContactClick = () => {
+    navigate('/contact'); // Add this function
+  };
+
   return (
     <div className={`about-us-container ${theme}`}>
-      {/* Hero Section */}
       <div className="about-us-hero">
         <div className="hero-overlay">
           <div className="hero-content">
@@ -32,7 +37,7 @@ const AboutUs = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus eu orci ut imperdiet. Suspendisse convallis dui diam.
             </p>
             <p className="hero-phone">Phone: 123 456 786</p>
-            <button className="hero-button">Contact Us</button>
+            <button className="hero-button" onClick={handleContactClick}>Contact Us</button>
           </div>
         </div>
         <img
@@ -43,36 +48,38 @@ const AboutUs = () => {
       </div>
 
       {/* About Section */}
-      <div className="about-us-section">
-        <div className="about-us-images">
-          <div className="about-image" data-transition>
-            <img
-              src="https://cdn.pixabay.com/photo/2016/11/29/09/32/auto-1868728_1280.jpg"
-              alt="Detailing Work 1"
-            />
+      <div className="about-section">
+        <div className="about-card">
+          <div className="about-images-grid">
+            <div className="about-image-card" data-transition>
+              <img
+                src="https://cdn.pixabay.com/photo/2016/11/29/09/32/auto-1868728_1280.jpg"
+                alt="Detailing Work 1"
+              />
+            </div>
+            <div className="about-image-card" data-transition>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb_hdfHlw2y_HLkhQTUYEGIfz2OGB-TipGqA&s"
+                alt="Detailing Work 2"
+              />
+            </div>
+            <div className="about-image-card" data-transition>
+              <img
+                src="https://cdn.pixabay.com/photo/2016/11/29/09/32/auto-1868727_1280.jpg"
+                alt="Detailing Work 3"
+              />
+            </div>
           </div>
-          <div className="about-image" data-transition>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb_hdfHlw2y_HLkhQTUYEGIfz2OGB-TipGqA&s"
-              alt="Detailing Work 2"
-            />
+          <div className="about-content">
+            <h2 className="about-title">Know More About Us</h2>
+            <p className="about-text">
+              At MotoGuide, we specialize in providing top-notch auto detailing services. Our team of experts ensures that every vehicle receives the care and attention it deserves.
+            </p>
+            <p className="about-text">
+              From exterior polishing to interior cleaning, we use the latest techniques and products to deliver exceptional results. Experience the best in auto detailing with MotoGuide.
+            </p>
+            <button className="about-btn" onClick={() => navigate('/')}>Learn More</button>
           </div>
-          <div className="about-image" data-transition>
-            <img
-              src="https://cdn.pixabay.com/photo/2016/11/29/09/32/auto-1868727_1280.jpg"
-              alt="Detailing Work 3"
-            />
-          </div>
-        </div>
-        <div className="about-us-content">
-          <h2 className="about-title">Know More About Us</h2>
-          <p className="about-description">
-            At MotoGuide, we specialize in providing top-notch auto detailing services. Our team of experts ensures that every vehicle receives the care and attention it deserves.
-          </p>
-          <p className="about-description">
-            From exterior polishing to interior cleaning, we use the latest techniques and products to deliver exceptional results. Experience the best in auto detailing with MotoGuide.
-          </p>
-          <button className="about-button">Learn More</button>
         </div>
       </div>
     </div>
