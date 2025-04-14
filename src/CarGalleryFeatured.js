@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CarCard from './components/CarCards';
+import CarSlider from './components/CarSlider';
 
 const carData = [
   { name: "Toyota GR Supra", image: "https://hips.hearstapps.com/hmg-prod/images/2025-toyota-gr-supra-102-668c519da0fe1.jpg?crop=0.638xw:0.538xh;0.152xw,0.178xh&resize=2048:*", price: "85 Lakhs", link: "https://www.toyota.com/gr-supra/" },
@@ -49,7 +50,7 @@ const CarGalleryFeatured = () => {
 
   return (
     <div className="container">
-      <h2 className="section-title text-center my-4">Featured Cars</h2>
+      <CarSlider title="Featured Cars" cars={carData.slice(0, 6)} isTrending={true} />
 
       <div className="d-flex justify-content-center mb-4 gap-3">
         <input

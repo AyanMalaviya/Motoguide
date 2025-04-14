@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiSun, FiMoon, FiSearch, FiMenu } from 'react-icons/fi';
+import { FiSun, FiMoon, FiSearch, FiMenu, FiGlobe } from 'react-icons/fi';
+import { useLanguage } from '../context/LanguageContext';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -8,6 +9,9 @@ const Navbar = () => {
   const [searchActive, setSearchActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [carCategoriesOpen, setCarCategoriesOpen] = useState(false);
+  const { currentLanguage, changeLanguage, languages, t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -40,11 +44,40 @@ const Navbar = () => {
           {/* Left side - only Home and Featured */}
           <div className="navbar-left navbar-links">
             <Link to="/" className={`nav-link ${isActive('/')}`}>
-              Home
+              {t('home')}
             </Link>
-            <Link to="/featured" className={`nav-link ${isActive('/featured')}`}>
-              Featured
-            </Link>
+            <div className={`car-categories ${carCategoriesOpen ? 'active' : ''}`}>
+              <button
+                className="nav-link"
+                onClick={() => setCarCategoriesOpen(!carCategoriesOpen)}
+                onBlur={() => setTimeout(() => setCarCategoriesOpen(false), 200)}
+              >
+                {t('carCategories')}
+              </button>
+              <div className="car-categories-menu">
+                <Link
+                  to="/featured"
+                  className="car-categories-option"
+                  onClick={() => setCarCategoriesOpen(false)}
+                >
+                  {t('featured')}
+                </Link>
+                <Link
+                  to="/highpower"
+                  className="car-categories-option"
+                  onClick={() => setCarCategoriesOpen(false)}
+                >
+                  {t('highPower')}
+                </Link>
+                <Link
+                  to="/highcomfort"
+                  className="car-categories-option"
+                  onClick={() => setCarCategoriesOpen(false)}
+                >
+                  {t('highComfort')}
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Centered brand */}
@@ -54,15 +87,15 @@ const Navbar = () => {
 
           {/* Right side - Contact Us, Search, Theme, Sidebar, Logo */}
           <div className="navbar-right navbar-links">
-            <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>
-              Contact Us
+            <Link to="/about" className={`nav-link ${isActive('/about')}`}>
+              {t('aboutUs')}
             </Link>
 
             <button
               type="button"
               className="search-icon"
               onClick={handleSearchToggle}
-              title="Search"
+              title={t('search')}
             >
               <FiSearch size={22} />
             </button>
@@ -72,7 +105,7 @@ const Navbar = () => {
                 <input
                   type="text"
                   className="search-input"
-                  placeholder="Search..."
+                  placeholder={t('searchPlaceholder')}
                   value={searchQuery}
                   onChange={handleSearchChange}
                   autoFocus
@@ -80,21 +113,48 @@ const Navbar = () => {
               </form>
             )}
 
-            <div className="theme-toggle" onClick={toggleTheme} title="Toggle Theme">
+            <div className="language-selector">
+              <button
+                className="language-toggle"
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+                title={t('changeLanguage')}
+              >
+                <FiGlobe size={22} />
+                <span className="current-language">{currentLanguage.code.toUpperCase()}</span>
+              </button>
+              {languageMenuOpen && (
+                <div className="language-menu">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className={`language-option ${lang.code === currentLanguage.code ? 'active' : ''}`}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setLanguageMenuOpen(false);
+                      }}
+                    >
+                      {lang.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="theme-toggle" onClick={toggleTheme} title={t('toggleTheme')}>
               {darkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
             </div>
 
             <button
               className="sidebar-toggle"
               onClick={toggleSidebar}
-              title="Toggle Sidebar"
+              title={t('toggleSidebar')}
             >
               <FiMenu size={22} />
             </button>
 
             {/* Logo */}
             <div className="navbar-logo">
-              <img src="/Motoguide Logo.png" alt="Logo" className="logo-image" />
+              <img src="/Motoguide Logo.png" alt={t('logo')} className="logo-image" />
             </div>
           </div>
         </div>
@@ -102,22 +162,22 @@ const Navbar = () => {
 
       <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <Link to="/" className="sidebar-link" onClick={toggleSidebar}>
-          Home
+          {t('home')}
         </Link>
         <Link to="/featured" className="sidebar-link" onClick={toggleSidebar}>
-          Featured
+          {t('featured')}
         </Link>
         <Link to="/highpower" className="sidebar-link" onClick={toggleSidebar}>
-          High Power
+          {t('highPower')}
         </Link>
         <Link to="/highcomfort" className="sidebar-link" onClick={toggleSidebar}>
-          High Comfort
+          {t('highComfort')}
         </Link>
         <Link to="/contact" className="sidebar-link" onClick={toggleSidebar}>
-          Contact Us
+          {t('contactUs')}
         </Link>
         <Link to="/about" className="sidebar-link" onClick={toggleSidebar}>
-          AboutUs
+          {t('aboutUs')}
         </Link>
       </div>
     </>

@@ -9,13 +9,15 @@ import Home from './Pages/Home';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs'; // Import the AboutUs page
 import { CarProvider } from './context/CarContext';
+import { LanguageProvider } from './context/LanguageContext';
 import SearchResults from './components/SearchResult';
 import CarDescription from './components/CarDescription';
 
 function App() {
   return (
     <CarProvider>
-      <Router>
+      <LanguageProvider>
+        <Router>
         <div className="app-container">
           <Navbar />
           <main className="main-content">
@@ -34,7 +36,8 @@ function App() {
           </main>
           <Footer />
         </div>
-      </Router>
+        </Router>
+      </LanguageProvider>
     </CarProvider>
   );
 }
