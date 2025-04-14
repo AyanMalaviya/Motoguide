@@ -6,26 +6,28 @@ import './CarSlider.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const CarSlider = ({ title, images, isTrending = false }) => {
+const CarSlider = ({ title, images, isTrending = false, isLarge = false }) => {
   const navigate = useNavigate();
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: isTrending ? 3 : 1,
+    slidesToShow: isLarge ? 1 : isTrending ? 3 : 1, // Large slider shows 1 slide, trending shows 3
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    centerMode: isTrending,
-    centerPadding: '60px',
+    centerMode: isLarge, // Enable centerMode for large sliders
+    centerPadding: isLarge ? '20%' : '0px', // Add padding for large sliders
     cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: isTrending ? 2 : 1,
-          centerMode: false
+          slidesToShow: isLarge ? 1 : isTrending ? 2 : 1,
+          centerMode: isLarge,
+          centerPadding: isLarge ? '10%' : '0px'
         }
       },
       {
@@ -60,12 +62,13 @@ const CarSlider = ({ title, images, isTrending = false }) => {
   };
 
   return (
-    <div className={`slider-container ${isTrending ? 'trending-slider' : ''}`}>
+    <div className={`slider-container ${isTrending ? 'trending-slider' : ''} ${isLarge ? 'large-slider' : ''}`}>
       <h2 className="slider-title">{title}</h2>
       <Slider {...settings}>
-        {images.slice(0, isTrending ? 6 : images.length).map((img, i) => (
+        {images.map((img, i) => (
           <div key={i} className="slide" onClick={() => handleImageClick(img)}>
-            <img src={img} alt={`Car ${i + 1}`} className="slide-image" />
+            <img src={img.image} alt={img.name} className="slide-image" />
+            <div className="car-name">{img.name}</div>
             {isTrending && (
               <div className="trending-badge">
                 <span>#{i + 1} Trending</span>
