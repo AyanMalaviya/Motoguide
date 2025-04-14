@@ -17,15 +17,39 @@ const Home = () => {
   };
 
   const supercarImages = [
-    'https://cdn.ferrari.com/cms/network/media/img/resize/670e710357a595000f736188-ferrari-f80-lineup-desktop?height=750',
-    'https://www.automobilemag.com/uploads/sites/11/2020/11/Lamborghini-Aventador-SVJ.jpg',
-    'https://www.mclarencf.com/imagetag/357/43/l/Used-2020-McLaren-720S-Spider-Performance.jpg',
+    {
+      name: "Ferrari F8 Tributo",
+      image: 'https://th.bing.com/th/id/R.d548e74164c64b1dd8dc3219928983f8?rik=EFaymbFcpKPWSg&riu=http%3a%2f%2fwww.zacoe.com%2fimages%2fferrari_sf90%2f45%2ffront45_after.png&ehk=j6TeQ8r3JhKXQXSbG4M2lo4nXHtE%2bpDiAE%2fN50D1vcg%3d&risl=&pid=ImgRaw&r=0',
+      price: "$1,200,000"
+    },
+    {
+      name: "Lamborghini Aventador SVJ",
+      image: 'https://th.bing.com/th/id/R.6ef3772c9166c46b182bb99d16f11677?rik=Z2H9x6wx%2bS5X1A&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2flamborghini-aventador-svj-63-2018-front-k7.jpg&ehk=ccR%2f6if5%2fVyZXuoafnzIvAy5YT4srwq3HoaikhJluP8%3d&risl=&pid=ImgRaw&r=0',
+      price: "$900,000"
+    },
+    {
+      name: "McLaren 720S",
+      image: 'https://wallpapercave.com/wp/wp2148417.jpg',
+      price: "$850,000"
+    }
   ];
 
   const luxuryCarImages = [
-    'https://media.autoexpress.co.uk/image/private/s--dsad6H7D--/v1562247060/autoexpress/2018/11/2twin.jpg',
-    'https://www.hdcarwallpapers.com/walls/2018_vision_mercedes_maybach_ultimate_luxury_interior_4k-HD.jpg',
-    'https://i.pinimg.com/originals/5a/da/38/5ada3891fc99a64c73559438b107a63d.jpg',
+    {
+      name: "Rolls-Royce Phantom",
+      image: 'https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2022/09/Rolls-Royce-Phantom-Series-II-Featured.jpg',
+      price: "$600,000"
+    },
+    {
+      name: "Mercedes-Maybach S-Class",
+      image: 'https://www.hdcarwallpapers.com/walls/2018_vision_mercedes_maybach_ultimate_luxury_interior_4k-HD.jpg',
+      price: "$450,000"
+    },
+    {
+      name: "Bentley Continental GT",
+      image: 'https://st.automobilemag.com/uploads/sites/5/2018/11/2019-Bentley-Continental-GT-Convertible-front-interior.jpg',
+      price: "$350,000"
+    }
   ];
 
   const carBrands = [
@@ -73,14 +97,50 @@ const Home = () => {
       </section>
       {/* CarSlider Section */}
       <section ref={sliderRef} className="slider-section">
-        <CarSlider title="Supercar Collection" images={supercarImages} />
-        <CarSlider title="Luxurious Cars Collection" images={luxuryCarImages} />
+        <CarSlider 
+          title="Supercar Collection" 
+          images={supercarImages} 
+          isLarge={true}
+          settings={{
+            dots: true,
+            infinite: true,
+            speed: 800,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            centerMode: true,
+            centerPadding: '0',
+            focusOnSelect: true,
+            cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)'
+          }}
+        />
+        <CarSlider 
+          title="Luxurious Cars Collection" 
+          images={luxuryCarImages} 
+          isLarge={true}
+          settings={{
+            dots: true,
+            infinite: true,
+            speed: 800,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            centerMode: true,
+            centerPadding: '0',
+            focusOnSelect: true,
+            cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)'
+          }}
+        />
       </section>
 
       {/* Shopping by Car Section */}
       <section className="car-brands-section">
         <div className="section-header">
-          <h2>Shopping by car?</h2>
+          <h2>Browse by brands?</h2>
           <p>Choose A Brand.</p>
           <button className="view-all" onClick={handleViewAll}>
             {showAllBrands ? 'Show Less' : 'View All'}

@@ -13,29 +13,31 @@ const CarSlider = ({ title, images, isTrending = false, isLarge = false }) => {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: isLarge ? 1 : isTrending ? 3 : 1, // Large slider shows 1 slide, trending shows 3
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    centerMode: isLarge, // Enable centerMode for large sliders
-    centerPadding: isLarge ? '20%' : '0px', // Add padding for large sliders
+    centerMode: true,
+    centerPadding: '0',
+    focusOnSelect: true,
     cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: isLarge ? 1 : isTrending ? 2 : 1,
-          centerMode: isLarge,
-          centerPadding: isLarge ? '10%' : '0px'
+          slidesToShow: 3,
+          centerMode: true,
+          centerPadding: '0'
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          arrows: false,
-          centerMode: false
+          centerMode: true,
+          centerPadding: '60px',
+          arrows: false
         }
       }
     ]
