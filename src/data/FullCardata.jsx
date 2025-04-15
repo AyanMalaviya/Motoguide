@@ -59,5 +59,31 @@ const FullCardata = [
 { name: "Zenvo TSR-S", image: "https://www.topgear.com/sites/default/files/cars-car/image/2021/05/zenvo_edit0003.jpg", price: "16 CR", link: "https://zenvoautomotive.com/models/tsr-s/" },
 { name: "Aston Martin Valkyrie", image: "https://media.gq-magazine.co.uk/photos/6405fb643e977a7efb8a7764/master/pass/Aston-Martin-Valkyrie-HED.jpg", price: "27 CR", link: "https://www.astonmartin.com/en/models/valkyrie" },
 { name: "SSC Tuatara", image: "https://www.supercars.net/blog/wp-content/uploads/2024/06/ssc.jpeg", price: "22 CR", link: "https://www.sscnorthamerica.com/tuatara" },
-];
+{
+    name: "Ferrari F8 Tributo",
+    image: 'https://th.bing.com/th/id/R.d548e74164c64b1dd8dc3219928983f8?rik=EFaymbFcpKPWSg&riu=http%3a%2f%2fwww.zacoe.com%2fimages%2fferrari_sf90%2f45%2ffront45_after.png&ehk=j6TeQ8r3JhKXQXSbG4M2lo4nXHtE%2bpDiAE%2fN50D1vcg%3d&risl=&pid=ImgRaw&r=0',
+    price: "$1,200,000"
+  },
+  {
+    name: "Lamborghini Aventador SVJ",
+    image: 'https://th.bing.com/th/id/R.6ef3772c9166c46b182bb99d16f11677?rik=Z2H9x6wx%2bS5X1A&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2flamborghini-aventador-svj-63-2018-front-k7.jpg&ehk=ccR%2f6if5%2fVyZXuoafnzIvAy5YT4srwq3HoaikhJluP8%3d&risl=&pid=ImgRaw&r=0',
+    price: "$900,000"
+  },
+  {
+    name: "McLaren 720S",
+    image: 'https://wallpapercave.com/wp/wp2148417.jpg',
+    price: "$850,000"
+  },
+  {
+    name: "Rolls-Royce Phantom",
+    image: 'https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2022/09/Rolls-Royce-Phantom-Series-II-Featured.jpg',
+    price: "$600,000"
+  },
+  {
+    name: "Mercedes-Maybach S-Class",
+    image: 'https://www.hdcarwallpapers.com/walls/2018_vision_mercedes_maybach_ultimate_luxury_interior_4k-HD.jpg',
+    price: "$450,000"
+  },
+  {name: "Bentley Continental GT",image: 'https://st.automobilemag.com/uploads/sites/5/2018/11/2019-Bentley-Continental-GT-Convertible-front-interior.jpg',price: "$350,000"}]
+
 export default FullCardata;

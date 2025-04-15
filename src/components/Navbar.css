@@ -70,6 +70,7 @@
 
 .navbar-brand:hover {
   transform: scale(1.1);
+
   text-shadow: 4px 4px 14px rgba(0, 0, 0, 0.7);
 }
 
@@ -118,7 +119,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(19, 18, 18);
   color: #ff3d3d;
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

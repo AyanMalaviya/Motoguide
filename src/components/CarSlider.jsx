@@ -46,7 +46,7 @@ const CarSlider = ({ title, images, isTrending = false, isLarge = false }) => {
   const handleImageClick = (img) => {
     const carData = {
       name: img.name || "Supercar",
-      image: img,
+      image: img.image, // Fix: Use img.image (the URL string) instead of the entire img object
       price: img.price || "Price on Request",
       description: "Experience the thrill of this exceptional automobile, combining cutting-edge technology with remarkable performance.",
       specifications: {

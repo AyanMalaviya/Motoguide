@@ -8,6 +8,7 @@ import HighPower from './Pages/HighPower';
 import Home from './Pages/Home';
 import ContactUs from './Pages/ContactUs';
 import AboutUs from './Pages/AboutUs'; // Import the AboutUs page
+import CarCompare from './components/CarCompare';
 import { CarProvider } from './context/CarContext';
 import { LanguageProvider } from './context/LanguageContext';
 import SearchResults from './components/SearchResult';
@@ -30,6 +31,7 @@ function App() {
               <Route path="/car/:carName" element={<CarDescription />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/about" element={<AboutUs />} /> {/* Add AboutUs route */}
+              <Route path="/compare" element={<CarCompare />} />
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
             </div>

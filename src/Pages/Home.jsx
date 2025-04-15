@@ -3,10 +3,12 @@ import React, { useRef, useState } from 'react';
 import CarSlider from '../components/CarSlider';
 import { Button } from '@mui/material';
 import './home.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const sliderRef = useRef(null);
   const [showAllBrands, setShowAllBrands] = useState(false);
+  const navigate = useNavigate();
 
   const handleExploreClick = () => {
     sliderRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -14,6 +16,10 @@ const Home = () => {
 
   const handleViewAll = () => {
     setShowAllBrands(!showAllBrands);
+  };
+
+  const handleBrandClick = (brandName) => {
+    navigate(`/brand/${brandName}`);
   };
 
   const supercarImages = [
@@ -148,7 +154,14 @@ const Home = () => {
         </div>
         <div className={`brands-grid ${showAllBrands ? 'show-all' : ''}`}>
           {carBrands.map((brand, index) => (
-            <div key={index} className="brand-item">
+            <div 
+              key={index} 
+              className="brand-item"
+              onClick={() => handleBrandClick(brand.name)}
+              role="button"
+              tabIndex={0}
+              data-brand={brand.name}
+            >
               <img src={brand.logo} alt={brand.name} />
               <span>{brand.name}</span>
             </div>

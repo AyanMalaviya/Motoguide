@@ -3,12 +3,14 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .car-description-header {
   display: flex;
   gap: 3rem;
-  height: calc(100vh - 200px);
+  min-height: 500px;
+  max-height: calc(100vh - 250px);
 }
 
 .car-header-info {
@@ -21,6 +23,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  min-height: min-content;
+  height: fit-content;
 }
 
 .car-title {
@@ -304,3 +309,46 @@
   .light-theme .error-message {
     color: #d32f2f;
   }
+
+.compare-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin-top: auto;
+  background: linear-gradient(45deg, #ff3d3d, #ff6666);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 61, 61, 0.3);
+  text-align: center;
+}
+
+.light-theme .compare-btn {
+  background: linear-gradient(45deg, #d32f2f, #e57373);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+}
+
+.compare-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(255, 61, 61, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .car-description-header {
+    flex-direction: column;
+    max-height: none;
+  }
+
+  .car-header-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .car-image-container {
+    height: 400px;
+  }
+}

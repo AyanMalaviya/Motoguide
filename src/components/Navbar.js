@@ -80,6 +80,13 @@ const Navbar = () => {
                 >
                   {t('High Comfort')}
                 </Link>
+                <Link
+                  to="/compare"
+                  className="car-categories-option"
+                  onClick={() => setCarCategoriesOpen(false)}
+                >
+                  {t('Compare Cars')}
+                </Link>
               </div>
             </div>
           </div>
@@ -167,6 +174,9 @@ const Navbar = () => {
         </Link>
         <Link to="/highcomfort" className="sidebar-link" onClick={toggleSidebar}>
           {t('highComfort')}
+        </Link>
+        <Link to="/compare" className="sidebar-link" onClick={toggleSidebar}>
+          {t('Compare Cars')}
         </Link>
         <Link to="/contact" className="sidebar-link" onClick={toggleSidebar}>
           {t('contactUs')}

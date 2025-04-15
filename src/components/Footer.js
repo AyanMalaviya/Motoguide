@@ -22,6 +22,7 @@ const Footer = () => {
             <li><a href="/featured">Featured</a></li>
             <li><a href="/highpower">High Power</a></li>
             <li><a href="/highcomfort">High Comfort</a></li>
+            <li><a href="/compare">Compare Cars</a></li>
             <li><a href="/contact">Contact Us</a></li>
             <li><a href="/about">About Us</a></li>
           </ul>

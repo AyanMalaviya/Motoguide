@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import './CarDescription.css';
 
 const CarDescription = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const car = location.state?.car;
   const [activeTab, setActiveTab] = useState('Overview');
+  const { t } = useLanguage();
 
   if (!car) {
-    return <div className="error-message">Car not found</div>;
+    return <div className="error-message">{t('carNotFound')}</div>;
   }
+
+  const handleCompareClick = () => {
+    navigate('/compare', { state: { preSelectedCar: car } });
+  };
 
   // Car specific description data
   const carDetails = {
@@ -25,6 +32,18 @@ const CarDescription = () => {
     }
   };
 
+  const tabs = [
+    { id: 'Overview', label: t('overview') },
+    { id: '360° View', label: t('view360') },
+    { id: 'Variants', label: t('variants') },
+    { id: 'Offers', label: t('offers') },
+    { id: 'Similar Cars', label: t('similarCars') },
+    { id: 'Colours', label: t('colours') },
+    { id: 'Brochure', label: t('brochure') },
+    { id: 'Mileage', label: t('mileage') },
+    { id: 'User Reviews', label: t('userReviews') }
+  ];
+
   const renderTabContent = () => {
     switch (activeTab) {
       case 'Overview':
@@ -32,26 +51,26 @@ const CarDescription = () => {
           <div className="overview-section">
             <p className="car-description">{carDetails.overview.description}</p>
             <div className="specifications">
-              <h3>Key Specifications</h3>
+              <h3>{t('keySpecifications')}</h3>
               <div className="specs-grid">
                 <div className="spec-item">
-                  <span className="spec-label">Engine</span>
+                  <span className="spec-label">{t('engine')}</span>
                   <span className="spec-value">{carDetails.overview.specifications.engine}</span>
                 </div>
                 <div className="spec-item">
-                  <span className="spec-label">Power</span>
+                  <span className="spec-label">{t('power')}</span>
                   <span className="spec-value">{carDetails.overview.specifications.power}</span>
                 </div>
                 <div className="spec-item">
-                  <span className="spec-label">Transmission</span>
+                  <span className="spec-label">{t('transmission')}</span>
                   <span className="spec-value">{carDetails.overview.specifications.transmission}</span>
                 </div>
                 <div className="spec-item">
-                  <span className="spec-label">Fuel Type</span>
+                  <span className="spec-label">{t('fuelType')}</span>
                   <span className="spec-value">{carDetails.overview.specifications.fuelType}</span>
                 </div>
                 <div className="spec-item">
-                  <span className="spec-label">Mileage</span>
+                  <span className="spec-label">{t('mileage')}</span>
                   <span className="spec-value">{carDetails.overview.specifications.mileage}</span>
                 </div>
               </div>
@@ -59,7 +78,7 @@ const CarDescription = () => {
           </div>
         );
       default:
-        return <div className="coming-soon">Content coming soon...</div>;
+        return <div className="coming-soon">{t('comingSoon')}</div>;
     }
   };
 
@@ -71,31 +90,33 @@ const CarDescription = () => {
         </div>
         <div className="car-header-info">
           <h1 className="car-title">{car.name}</h1>
-          <div className="car-price">₹ {car.price}</div>
+          <div className="car-price">
+            {car.price.startsWith('$') ? car.price : `₹ ${car.price}`}
+          </div>
           <div className="rating-container">
             <div className="expert-rating">
               <span className="rating-star">★</span>
-              <span>3.9 Expert Rating</span>
+              <span>3.9 {t('expertRating')}</span>
             </div>
             <div className="user-rating">
               <span className="rating-star">★</span>
-              <span>4.6 User Rating (500)</span>
+              <span>4.6 {t('userRating')} (500)</span>
             </div>
           </div>
-          <a href={car.link} target="_blank" rel="noopener noreferrer" className="official-link-btn">
-            Visit Official Page
-          </a>
+          <button onClick={handleCompareClick} className="compare-btn">
+            {t('compareCars')}
+          </button>
         </div>
       </div>
       
       <div className="car-tabs">
-        {['Overview', '360° View', 'Variants', 'Offers', 'Similar Cars', 'Colours', 'Brochure', 'Mileage', 'User Reviews'].map(tab => (
+        {tabs.map(tab => (
           <button 
-            key={tab}
-            className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
+            key={tab.id}
+            className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+            onClick={() => setActiveTab(tab.id)}
           >
-            {tab}
+            {tab.label}
           </button>
         ))}
       </div>
