@@ -40,6 +40,10 @@ const Navbar = () => {
   return (
     <>
       <nav className={`navbar ${darkMode ? 'dark' : 'light'}`}>
+        {/* Fixed brand outside the flex container */}
+        <div className="navbar-brand">
+          <span className="brand-highlight">Moto</span>Guide
+        </div>
         <div className="navbar-container">
           {/* Left side - only Home and Featured */}
           <div className="navbar-left navbar-links">
@@ -78,11 +82,6 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-          </div>
-
-          {/* Centered brand */}
-          <div className="navbar-brand">
-            <span className="brand-highlight">Moto</span>Guide
           </div>
 
           {/* Right side - Contact Us, Search, Theme, Sidebar, Logo */}
@@ -152,10 +151,6 @@ const Navbar = () => {
               <FiMenu size={22} />
             </button>
 
-            {/* Logo */}
-            <div className="navbar-logo">
-              <img src="/Motoguide Logo.png" alt={t('logo')} className="logo-image" />
-            </div>
           </div>
         </div>
       </nav>
