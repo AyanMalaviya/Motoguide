@@ -13,6 +13,7 @@ import { CarProvider } from './context/CarContext';
 import { LanguageProvider } from './context/LanguageContext';
 import SearchResults from './components/SearchResult';
 import CarDescription from './components/CarDescription';
+import LoginRegister from './components/LoginRegister'; // Import the LoginRegister component
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/about" element={<AboutUs />} /> {/* Add AboutUs route */}
               <Route path="/compare" element={<CarCompare />} />
+              <Route path="/login" element={<LoginRegister />} /> {/* Add LoginRegister route */}
             </Routes>
             <div style={{ background: '#111', minHeight: '0vh' }}>
             </div>

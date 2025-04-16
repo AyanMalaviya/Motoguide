@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiSun, FiMoon, FiSearch, FiMenu, FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -11,9 +12,18 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [carCategoriesOpen, setCarCategoriesOpen] = useState(false);
+  const [user, setUser] = useState(null);
   const { currentLanguage, changeLanguage, languages, t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
@@ -36,6 +46,12 @@ const Navbar = () => {
   const handleSearchToggle = () => setSearchActive((prev) => !prev);
 
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
+
+  const handleLogout = async () => {
+    const auth = getAuth();
+    await signOut(auth);
+    setUser(null);
+  };
 
   return (
     <>
@@ -149,6 +165,27 @@ const Navbar = () => {
             <div className="theme-toggle" onClick={toggleTheme} title={t('toggleTheme')}>
               {darkMode ? <FiSun size={22} /> : <FiMoon size={22} />}
             </div>
+
+            {/* Login/Logout Button as Page Link */}
+            {user ? (
+              <button
+                className="nav-link login-btn"
+                onClick={handleLogout}
+                style={{ marginLeft: '10px' }}
+                title="Logout"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="nav-link login-btn"
+                style={{ marginLeft: '10px' }}
+                title="Login"
+              >
+                Login
+              </Link>
+            )}
 
             <button
               className="sidebar-toggle"
