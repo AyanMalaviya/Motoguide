@@ -59,26 +59,81 @@ const Home = () => {
   ];
 
   const carBrands = [
-    { logo: 'https://www.carlogos.org/car-logos/ford-logo.png', name: 'Ford' },
-    { logo: 'https://www.carlogos.org/car-logos/chevrolet-logo.png', name: 'Chevrolet' },
+    { logo: 'https://www.carlogos.org/car-logos/acura-logo.png', name: 'Acura' },
+    { logo: 'https://www.carlogos.org/car-logos/alfa-romeo-logo.png', name: 'Alfa Romeo' },
+    { logo: 'https://www.carlogos.org/car-logos/aston-martin-logo.png', name: 'Aston Martin' },
     { logo: 'https://www.carlogos.org/car-logos/audi-logo.png', name: 'Audi' },
+    { logo: 'https://www.carlogos.org/car-logos/baic-logo.png', name: 'BAIC' },
+    { logo: 'https://www.carlogos.org/car-logos/bentley-logo.png', name: 'Bentley' },
     { logo: 'https://www.carlogos.org/car-logos/bmw-logo.png', name: 'BMW' },
+    { logo: 'https://www.carlogos.org/car-logos/buick-logo.png', name: 'Buick' },
+    { logo: 'https://www.carlogos.org/car-logos/bugatti-logo.png', name: 'Bugatti' },
+    { logo: 'https://www.carlogos.org/car-logos/byd-logo.png', name: 'BYD' },
+    { logo: 'https://www.carlogos.org/car-logos/cadillac-logo.png', name: 'Cadillac' },
+    { logo: 'https://www.carlogos.org/car-logos/chery-logo.png', name: 'Chery' },
+    { logo: 'https://www.carlogos.org/car-logos/chevrolet-logo.png', name: 'Chevrolet' },
+    { logo: 'https://www.carlogos.org/car-logos/chrysler-logo.png', name: 'Chrysler' },
+    { logo: 'https://www.carlogos.org/car-logos/citroen-logo.png', name: 'Citroen' },
+    { logo: 'https://www.carlogos.org/car-logos/daewoo-logo.png', name: 'Daewoo' },
+    { logo: 'https://www.carlogos.org/car-logos/daihatsu-logo.png', name: 'Daihatsu' },
+    { logo: 'https://www.carlogos.org/car-logos/dodge-logo.png', name: 'Dodge' },
+    { logo: 'https://www.carlogos.org/car-logos/faw-logo.png', name: 'FAW' },
     { logo: 'https://www.carlogos.org/car-logos/ferrari-logo.png', name: 'Ferrari' },
-    { logo: 'https://www.carlogos.org/car-logos/lamborghini-logo.png', name: 'Lamborghini' },
-    { logo: 'https://www.carlogos.org/car-logos/rolls-royce-logo.png', name: 'Rolls Royce' },
-    { logo: 'https://www.carlogos.org/car-logos/mclaren-logo.png', name: 'McLaren' },
+    { logo: 'https://www.carlogos.org/car-logos/fiat-logo.png', name: 'Fiat' },
+    { logo: 'https://www.carlogos.org/car-logos/ford-logo.png', name: 'Ford' },
+    { logo: 'https://www.carlogos.org/car-logos/genesis-logo.png', name: 'Genesis' },
+    { logo: 'https://www.carlogos.org/car-logos/geely-logo.png', name: 'Geely' },
+    { logo: 'https://www.carlogos.org/car-logos/gmc-logo.png', name: 'GMC' },
+    { logo: 'https://www.carlogos.org/car-logos/great-wall-logo.png', name: 'Great Wall' },
+    { logo: 'https://www.carlogos.org/car-logos/haval-logo.png', name: 'Haval' },
+    { logo: 'https://www.carlogos.org/car-logos/honda-logo.png', name: 'Honda' },
+    { logo: 'https://www.carlogos.org/car-logos/hyundai-logo.png', name: 'Hyundai' },
+    { logo: 'https://www.carlogos.org/car-logos/infiniti-logo.png', name: 'Infiniti' },
     { logo: 'https://www.carlogos.org/car-logos/jaguar-logo.png', name: 'Jaguar' },
-    { logo: 'https://www.carlogos.org/car-logos/land-rover-logo.png', name: 'Land Rover' },
-    { logo: 'https://www.carlogos.org/car-logos/maserati-logo.png', name: 'Maserati' },
+    { logo: 'https://www.carlogos.org/car-logos/jeep-logo.png', name: 'Jeep' },
+    { logo: 'https://www.carlogos.org/car-logos/kia-logo.png', name: 'Kia' },
     { logo: 'https://www.carlogos.org/car-logos/koenigsegg-logo.png', name: 'Koenigsegg' },
-    { logo: 'https://www.carlogos.org/car-logos/porsche-logo.png', name: 'Porsche' },
-    { logo: 'https://www.carlogos.org/car-logos/volkswagen-logo.png', name: 'Volkswagen' },
-    { logo: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png', name: 'Mercedes-Benz' },
-    { logo: 'https://www.carlogos.org/car-logos/nissan-logo.png', name: 'Nissan' },
-    { logo: 'https://www.carlogos.org/car-logos/toyota-logo.png', name: 'Toyota' },
+    { logo: 'https://www.carlogos.org/car-logos/lamborghini-logo.png', name: 'Lamborghini' },
+    { logo: 'https://www.carlogos.org/car-logos/lancia-logo.png', name: 'Lancia' },
+    { logo: 'https://www.carlogos.org/car-logos/land-rover-logo.png', name: 'Land Rover' },
     { logo: 'https://www.carlogos.org/car-logos/lexus-logo.png', name: 'Lexus' },
-    { logo: 'https://www.carlogos.org/car-logos/mg-logo.png', name: 'MG' }
-];
+    { logo: 'https://www.carlogos.org/car-logos/lincoln-logo.png', name: 'Lincoln' },
+    { logo: 'https://www.carlogos.org/car-logos/lotus-logo.png', name: 'Lotus' },
+    { logo: 'https://www.carlogos.org/car-logos/lynk-co-logo.png', name: 'Lynk & Co' },
+    { logo: 'https://www.carlogos.org/car-logos/mahindra-logo.png', name: 'Mahindra' },
+    { logo: 'https://www.carlogos.org/car-logos/maserati-logo.png', name: 'Maserati' },
+    { logo: 'https://www.carlogos.org/car-logos/maybach-logo.png', name: 'Maybach' },
+    { logo: 'https://www.carlogos.org/car-logos/mclaren-logo.png', name: 'McLaren' },
+    { logo: 'https://www.carlogos.org/car-logos/mercedes-benz-logo.png', name: 'Mercedes-Benz' },
+    { logo: 'https://www.carlogos.org/car-logos/mg-logo.png', name: 'MG' },
+    { logo: 'https://www.carlogos.org/car-logos/mini-logo.png', name: 'Mini' },
+    { logo: 'https://www.carlogos.org/car-logos/nissan-logo.png', name: 'Nissan' },
+    { logo: 'https://www.carlogos.org/car-logos/weilai-logo.png', name: 'NIO' },
+    { logo: 'https://www.carlogos.org/car-logos/pagani-logo.png', name: 'Pagani' },
+    { logo: 'https://www.carlogos.org/car-logos/peugeot-logo.png', name: 'Peugeot' },
+    { logo: 'https://www.carlogos.org/car-logos/perodua-logo.png', name: 'Perodua' },
+    { logo: 'https://www.carlogos.org/car-logos/porsche-logo.png', name: 'Porsche' },
+    { logo: 'https://www.carlogos.org/car-logos/proton-logo.png', name: 'Proton' },
+    { logo: 'https://www.carlogos.org/car-logos/ram-logo.png', name: 'RAM' },
+    { logo: 'https://www.carlogos.org/car-logos/renault-logo.png', name: 'Renault' },
+    { logo: 'https://www.carlogos.org/car-logos/rolls-royce-logo.png', name: 'Rolls Royce' },
+    { logo: 'https://www.carlogos.org/car-logos/roewe-logo.png', name: 'Roewe' },
+    { logo: 'https://www.carlogos.org/car-logos/saab-logo.png', name: 'Saab' },
+    { logo: 'https://www.carlogos.org/car-logos/saic-logo.png', name: 'SAIC' },
+    { logo: 'https://www.carlogos.org/car-logos/seat-logo.png', name: 'Seat' },
+    { logo: 'https://www.carlogos.org/car-logos/skoda-logo.png', name: 'Skoda' },
+    { logo: 'https://www.carlogos.org/car-logos/ssangyong-logo.png', name: 'SsangYong' },
+    { logo: 'https://www.carlogos.org/car-logos/subaru-logo.png', name: 'Subaru' },
+    { logo: 'https://www.carlogos.org/car-logos/suzuki-logo.png', name: 'Suzuki' },
+    { logo: 'https://www.carlogos.org/car-logos/tata-logo.png', name: 'Tata' },
+    { logo: 'https://www.carlogos.org/car-logos/tesla-logo.png', name: 'Tesla' },
+    { logo: 'https://www.carlogos.org/car-logos/toyota-logo.png', name: 'Toyota' },
+    { logo: 'https://www.carlogos.org/car-logos/venucia-logo.png', name: 'Venucia' },
+    { logo: 'https://www.carlogos.org/car-logos/volkswagen-logo.png', name: 'Volkswagen' },
+    { logo: 'https://www.carlogos.org/car-logos/volvo-logo.png', name: 'Volvo' },
+    { logo: 'https://www.carlogos.org/car-logos/xpeng-logo.png', name: 'XPeng' },
+    { logo: 'https://www.carlogos.org/car-logos/zotye-logo.png', name: 'Zotye' }
+  ];
 
   return (
     <div className="home-container">
@@ -106,40 +161,10 @@ const Home = () => {
         <CarSlider 
           title="Supercar Collection" 
           images={supercarImages} 
-          isLarge={true}
-          settings={{
-            dots: true,
-            infinite: true,
-            speed: 800,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 4000,
-            centerMode: true,
-            centerPadding: '0',
-            focusOnSelect: true,
-            cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)'
-          }}
         />
         <CarSlider 
           title="Luxurious Cars Collection" 
           images={luxuryCarImages} 
-          isLarge={true}
-          settings={{
-            dots: true,
-            infinite: true,
-            speed: 800,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 4000,
-            centerMode: true,
-            centerPadding: '0',
-            focusOnSelect: true,
-            cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)'
-          }}
         />
       </section>
 
@@ -148,9 +173,6 @@ const Home = () => {
         <div className="section-header">
           <h2>Browse by brands?</h2>
           <p>Choose A Brand.</p>
-          <button className="view-all" onClick={handleViewAll}>
-            {showAllBrands ? 'Show Less' : 'View All'}
-          </button>
         </div>
         <div className={`brands-grid ${showAllBrands ? 'show-all' : ''}`}>
           {carBrands.map((brand, index) => (
@@ -166,6 +188,11 @@ const Home = () => {
               <span>{brand.name}</span>
             </div>
           ))}
+        </div>
+        <div className="view-all-btn-wrapper">
+          <button className="view-all" onClick={handleViewAll}>
+            {showAllBrands ? 'Show Less' : 'View All'}
+          </button>
         </div>
       </section>
     </div>

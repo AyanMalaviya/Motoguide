@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Drawer, IconButton, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
-
-// Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyAfX-iR02dinbfztgawuVNitMIz6i8_GiM",
-  authDomain: "signinform-b731d.firebaseapp.com",
-  projectId: "signinform-b731d",
-  storageBucket: "signinform-b731d.appspot.com",
-  messagingSenderId: "96506574126",
-  appId: "1:96506574126:web:38a4c3b4d0d6109117b6bf",
-  measurementId: "G-MCWVGLR27R"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "./FirebaseConfig";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
 const LoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [user, setUser] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isDark, setIsDark] = useState(document.body.classList.contains("light-theme") ? false : true);
+
+  // Listen for theme changes (when Navbar toggles the theme)
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(!document.body.classList.contains("light-theme"));
+    });
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -40,7 +35,7 @@ const LoginRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password } = formData;
-  
+
     try {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, username, password);
@@ -54,7 +49,6 @@ const LoginRegister = () => {
       alert(error.message);
     }
   };
-  
 
   const handleLogout = async () => {
     await signOut(auth);
@@ -66,18 +60,31 @@ const LoginRegister = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh", backgroundColor: "#f3f4f6" }}>
+    <Box
+      sx={{
+        display: "flex",
+        minHeight: "100vh",
+        backgroundColor: isDark ? "#181a20" : "#f3f4f6",
+        transition: "background-color 0.3s"
+      }}
+    >
       {/* Sidebar Toggle Button */}
       <IconButton
         onClick={toggleDrawer(true)}
-        sx={{ position: "fixed", top: 16, left: 16, zIndex: 1300 }}
+        sx={{
+          position: "fixed",
+          top: 16,
+          left: 16,
+          zIndex: 1300,
+          color: isDark ? "#fff" : "primary.main"
+        }}
         color="primary"
       >
       </IconButton>
 
       {/* Drawer Sidebar */}
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-        <Box sx={{ width: 250, padding: 2 }}>
+        <Box sx={{ width: 250, padding: 2, bgcolor: isDark ? "#23272f" : "#fff" }}>
           <Toolbar />
           <Button fullWidth component={Link} to="/Home" onClick={toggleDrawer(false)}>Home</Button>
           <Button fullWidth component={Link} to="/RegisterNow" onClick={toggleDrawer(false)}>Register</Button>
@@ -99,7 +106,18 @@ const LoginRegister = () => {
 
       {/* Main Content */}
       <Box sx={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <Box sx={{ backgroundColor: "white", padding: 4, borderRadius: 2, boxShadow: 3, width: "100%", maxWidth: 400 }}>
+        <Box
+          sx={{
+            backgroundColor: isDark ? "#23272f" : "#fff",
+            color: isDark ? "#fff" : "#222",
+            padding: 4,
+            borderRadius: 2,
+            boxShadow: 3,
+            width: "100%",
+            maxWidth: 400,
+            transition: "background-color 0.3s, color 0.3s"
+          }}
+        >
           {user ? (
             <Box textAlign="center">
               <h2>Welcome, {user.email}!</h2>
@@ -126,7 +144,15 @@ const LoginRegister = () => {
                     value={formData.username}
                     onChange={handleInputChange}
                     required
-                    style={{ width: "100%", padding: "8px", marginTop: "4px", borderRadius: "4px", border: "1px solid #ccc" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      marginTop: "4px",
+                      borderRadius: "4px",
+                      border: isDark ? "1px solid #444" : "1px solid #ccc",
+                      background: isDark ? "#181a20" : "#fff",
+                      color: isDark ? "#fff" : "#222"
+                    }}
                   />
                 </div>
                 <div style={{ marginBottom: "1rem" }}>
@@ -137,7 +163,15 @@ const LoginRegister = () => {
                     value={formData.password}
                     onChange={handleInputChange}
                     required
-                    style={{ width: "100%", padding: "8px", marginTop: "4px", borderRadius: "4px", border: "1px solid #ccc" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      marginTop: "4px",
+                      borderRadius: "4px",
+                      border: isDark ? "1px solid #444" : "1px solid #ccc",
+                      background: isDark ? "#181a20" : "#fff",
+                      color: isDark ? "#fff" : "#222"
+                    }}
                   />
                 </div>
                 <Button type="submit" fullWidth variant="contained" color="primary">

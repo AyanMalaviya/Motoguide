@@ -23,8 +23,8 @@ const CarDescription = () => {
     overview: {
       description: `The ${car.name} offers a sorted ride and engaging drive, ample space, and modern-day equipment. While its boot space is limited, it isn't a deal-breaker, especially considering the compact SUV's attractive pricing.`,
       specifications: {
-        engine: "2.0L Turbocharged",
-        power: "250 HP",
+        engine: "4.4L Twin-Turbo V8",
+        power: "635 HP",
         transmission: "8-Speed Automatic",
         fuelType: "Petrol",
         mileage: "12.5 kmpl"
